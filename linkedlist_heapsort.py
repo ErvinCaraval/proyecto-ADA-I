@@ -74,7 +74,7 @@ class Jugador:
         self.rendimiento = rendimiento
 
     def __repr__(self):
-        return f"{{ {self.id} , {self.nombre} , {self.edad} , {self.rendimiento} }}"
+        return f"{self.id}"
 
 class Equipo:
     def __init__(self, deporte, sede):
@@ -96,8 +96,9 @@ class Equipo:
         return sum(j.rendimiento for j in jugadores_list) / len(jugadores_list) if jugadores_list else 0
 
     def __repr__(self):
-        jugadores_ids = [j.id for j in self.jugadores.to_list()]
-        return f"{self.deporte}, Rendimiento: {self.rendimiento_promedio()}\n{self.jugadores.to_list()}"
+        ids = ', '.join(str(j) for j in self.jugadores)
+        return f"{self.deporte}, Rendimiento: {self.rendimiento_promedio()}\n{{ {ids} }}"
+
 
 class Sede:
     def __init__(self, nombre):
@@ -119,8 +120,9 @@ class Sede:
         return total_rendimiento if equipos_list else 0
 
     def __repr__(self):
-        equipos_list = self.equipos.to_list()
-        return f"Sede {self.nombre}, Rendimiento: {self.rendimiento_promedio()}\n" + "\n".join([f"{equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio()}\n{equipo.jugadores.to_list()}" for equipo in equipos_list])
+        equipos_str = '\n\n'.join(str(e) for e in self.equipos)
+        return f"{self.nombre}, Rendimiento: {self.rendimiento_promedio()}\n\n{equipos_str}"
+
 
 input1 = "input 1"
 print("#" * 50)

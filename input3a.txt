@@ -192,16 +192,16 @@ s2.ordenar_equipos()
 s3.ordenar_equipos()
 
 # Mostrar resultados de las sedes
-print(f"{s1}, Rendimiento: {s1.rendimiento_promedio()}\n")
-print(f"{s2}, Rendimiento: {s2.rendimiento_promedio()}\n")
-print(f"{s3}, Rendimiento: {s3.rendimiento_promedio()}\n")
+print(f"{s1}\n")
+print(f"{s2}\n")
+print(f"{s3}\n")
 
 
 # Ranking de jugadores
 todos_los_jugadores = jugadores[:]
 heapsort(todos_los_jugadores, key=lambda x: x.rendimiento)
-print("\nRanking Jugadores:")
-print([f"{j}" for j in todos_los_jugadores])
+ranking_jugadores = ', '.join(str(j.id) for j in todos_los_jugadores)
+print(f"Ranking Jugadores:\n{{ {ranking_jugadores} }}\n")
 
 # Equipo con mayor y menor rendimiento
 # Obtener equipos con mayor y menor rendimiento entre las dos sedes
@@ -250,8 +250,8 @@ else:
 # Jugador con mayor y menor rendimiento
 jugador_mayor_rendimiento = todos_los_jugadores[-1]
 jugador_menor_rendimiento = todos_los_jugadores[0]
-print("\nJugador con mayor rendimiento:", jugador_mayor_rendimiento)
-print("Jugador con menor rendimiento:", jugador_menor_rendimiento)
+print(f"Jugador con mayor rendimiento: {{ {jugador_mayor_rendimiento.id} , {jugador_mayor_rendimiento.nombre} , {jugador_mayor_rendimiento.rendimiento} }}")
+print(f"Jugador con menor rendimiento: {{ {jugador_menor_rendimiento.id} , {jugador_menor_rendimiento.nombre} , {jugador_menor_rendimiento.rendimiento} }}\n")
 
 # Jugador más joven y más veterano (sin usar min y max)
 jugador_mas_joven = jugadores[0]
@@ -263,8 +263,8 @@ for jugador in jugadores:
     if jugador.edad > jugador_mas_veterano.edad:
         jugador_mas_veterano = jugador
 
-print("\nJugador más joven:", jugador_mas_joven)
-print("Jugador más veterano:", jugador_mas_veterano)
+print(f"jugador mas joven: {{ {jugador_mas_joven.id} , {jugador_mas_joven.nombre} , {jugador_mas_joven.edad} }}")
+print(f"jugador mas veterano: {{ {jugador_mas_veterano.id} , {jugador_mas_veterano.nombre} , {jugador_mas_veterano.edad} }}\n")
 
 # Promedio de edad y rendimiento de los jugadores
 edades = [jugador.edad for jugador in jugadores]

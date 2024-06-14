@@ -233,8 +233,8 @@ print("Equipo con menor rendimiento:", equipo_menor_rendimiento.deporte, "en", e
 # Jugador con mayor y menor rendimiento
 jugador_mayor_rendimiento = todos_los_jugadores[-1]
 jugador_menor_rendimiento = todos_los_jugadores[0]
-print("\nJugador con mayor rendimiento:", jugador_mayor_rendimiento)
-print("Jugador con menor rendimiento:", jugador_menor_rendimiento)
+print(f"Jugador con mayor rendimiento: {{ {jugador_mayor_rendimiento.id} , {jugador_mayor_rendimiento.nombre} , {jugador_mayor_rendimiento.rendimiento} }}")
+print(f"Jugador con menor rendimiento: {{ {jugador_menor_rendimiento.id} , {jugador_menor_rendimiento.nombre} , {jugador_menor_rendimiento.rendimiento} }}\n")
 
 # Jugador más joven y más veterano (sin usar min y max)
 jugador_mas_joven = jugadores[0]
@@ -246,8 +246,9 @@ for jugador in jugadores:
     if jugador.edad > jugador_mas_veterano.edad:
         jugador_mas_veterano = jugador
 
-print("\nJugador más joven:", jugador_mas_joven)
-print("Jugador más veterano:", jugador_mas_veterano)
+print(f"jugador mas joven: {{ {jugador_mas_joven.id} , {jugador_mas_joven.nombre} , {jugador_mas_joven.edad} }}")
+print(f"jugador mas veterano: {{ {jugador_mas_veterano.id} , {jugador_mas_veterano.nombre} , {jugador_mas_veterano.edad} }}\n")
+
 
 
 # Promedio de edad y rendimiento de los jugadores
