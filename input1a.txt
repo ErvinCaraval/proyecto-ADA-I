@@ -54,15 +54,6 @@ sede1.ordenar_equipos()
 sede2.ordenar_equipos()
 
 
-for equipo in sede1.equipos.to_list():
-    equipo.ordenar_jugadores()
-
-for equipo in sede2.equipos.to_list():
-    equipo.ordenar_jugadores()
-
-
-sede1.ordenar_equipos()
-sede2.ordenar_equipos()
 
 
 

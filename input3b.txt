@@ -1,0 +1,258 @@
+jugadores = [
+Jugador(1,"Sofia Garcia", 21, 66),
+Jugador(2,"Alejandro Torres", 27, 24),
+Jugador(3,"Valentina Rodriguez", 19, 15),
+Jugador(4,"Juan Lopez", 22, 78),
+Jugador(5,"Martina Martinez", 30, 55),
+Jugador(6,"Sebastian Perez", 25, 42),
+Jugador(7,"Camila Fernandez", 24, 36),
+Jugador(8,"Mateo Gonzalez", 29, 89),
+Jugador(9,"Isabella Diaz", 40, 92),
+Jugador(10,"Daniel Ruiz", 17, 57),
+Jugador(11,"Luciana Sanchez", 18, 89),
+Jugador(12,"Lucas Vasquez", 26, 82),
+Jugador(13,"William Hernandez", 30, 44),
+Jugador(14,"Laura Perez", 20, 78),
+Jugador(15,"Santiago Rodriguez", 23, 32),
+Jugador(16,"Maria Gonzalez", 28, 65),
+Jugador(17,"Carlos Lopez", 19, 72),
+Jugador(18,"Valeria Martinez", 21, 45),
+Jugador(19,"Andres Perez", 30, 78),
+Jugador(20,"Sara Hernandez", 22, 56),
+Jugador(21,"Diego Castro", 23, 67),
+Jugador(22,"Gabriela Ramos", 24, 43),
+Jugador(23,"Adrian Torres", 22, 15),
+Jugador(24,"Natalia Gomez", 21, 39),
+Jugador(25,"Ivan Vargas", 29, 84),
+Jugador(26,"Fernanda Ortiz", 26, 33),
+Jugador(27,"Pablo Ramirez", 27, 65),
+Jugador(28,"Julia Sanchez", 28, 79),
+Jugador(29,"Ricardo Ruiz", 30, 52),
+Jugador(30,"Victoria Leon", 25, 59),
+Jugador(31,"Emilio Molina", 19, 46),
+Jugador(32,"Andrea Herrera", 20, 75),
+Jugador(33,"Leonardo Delgado", 22, 54),
+Jugador(34,"Rosa Moreno", 23, 68),
+Jugador(35,"Oscar Gutierrez", 26, 60),
+Jugador(36,"Daniela Romero", 24, 58),
+Jugador(37,"Miguel Diaz", 21, 77),
+Jugador(38,"Lucia Alvarez", 19, 49),
+Jugador(39,"Rodrigo Martinez", 28, 63),
+Jugador(40,"Elena Cruz", 27, 41),
+Jugador(41,"Manuel Silva", 23, 61),
+Jugador(42,"Paula Garcia", 28, 88),
+Jugador(43,"Jorge Torres", 27, 47),
+Jugador(44,"Carolina Ramirez", 25, 69),
+Jugador(45,"Martin Fernandez", 21, 83),
+Jugador(46,"Sofia Ruiz", 39, 34),
+Jugador(47,"Antonio Vasquez", 28, 73),
+Jugador(48,"Alicia Ortega", 26, 66),
+Jugador(49,"Alberto Mendoza", 30, 66),
+Jugador(50,"Patricia Guzman", 42, 37),
+Jugador(51,"Eduardo Alvarez", 22, 78),
+Jugador(52,"Teresa Morales", 29, 14),
+Jugador(53,"Luis Gutierrez", 36, 57),
+Jugador(54,"Veronica Castillo", 25, 45),
+Jugador(55,"Raul Romero", 27, 88),
+Jugador(56,"Carmen Martinez", 30, 84),
+Jugador(57,"Marcos Soto", 32, 62),
+Jugador(58,"Ana Campos", 29, 12),
+Jugador(59,"Hector Peña", 28, 76),
+Jugador(60,"Diana Herrera", 26, 11)
+]
+
+
+# Crear equipos y agregar jugadores
+e1 = Equipo("Cali", "Futbol")
+e1.agregar_jugador(jugadores[15])
+e1.agregar_jugador(jugadores[1])
+e1.agregar_jugador(jugadores[39])
+e1.agregar_jugador(jugadores[48])
+
+e2 = Equipo("Cali", "Volleyball")
+e2.agregar_jugador(jugadores[16])
+e2.agregar_jugador(jugadores[8])
+e2.agregar_jugador(jugadores[17])
+e2.agregar_jugador(jugadores[25])
+e2.agregar_jugador(jugadores[37])
+e2.agregar_jugador(jugadores[49])
+e2.agregar_jugador(jugadores[50])
+
+e3 = Equipo("Cali", "Basketball")
+e3.agregar_jugador(jugadores[0])
+e3.agregar_jugador(jugadores[26])
+e3.agregar_jugador(jugadores[38])
+e3.agregar_jugador(jugadores[53])
+
+e10 = Equipo("Cali", "Tenis")
+e10.agregar_jugador(jugadores[9])
+e10.agregar_jugador(jugadores[18])
+e10.agregar_jugador(jugadores[32])
+e10.agregar_jugador(jugadores[47])
+
+e11 = Equipo("Cali", "Natacion")
+e11.agregar_jugador(jugadores[14])
+e11.agregar_jugador(jugadores[19])
+e11.agregar_jugador(jugadores[36])
+e11.agregar_jugador(jugadores[58])
+
+e4 = Equipo("Bogota", "Futbol")
+e4.agregar_jugador(jugadores[24])
+e4.agregar_jugador(jugadores[7])
+e4.agregar_jugador(jugadores[31])
+e4.agregar_jugador(jugadores[57])
+
+e5 = Equipo("Bogota", "Volleyball")
+e5.agregar_jugador(jugadores[3])
+e5.agregar_jugador(jugadores[20])
+e5.agregar_jugador(jugadores[51])
+
+e6 = Equipo("Bogota", "Basketball")
+e6.agregar_jugador(jugadores[10])
+e6.agregar_jugador(jugadores[45])
+e6.agregar_jugador(jugadores[52])
+
+e12 = Equipo("Bogota", "Tenis")
+e12.agregar_jugador(jugadores[23])
+e12.agregar_jugador(jugadores[11])
+e12.agregar_jugador(jugadores[27])
+e12.agregar_jugador(jugadores[56])
+
+e13 = Equipo("Bogota", "Natacion")
+e13.agregar_jugador(jugadores[2])
+e13.agregar_jugador(jugadores[35])
+e13.agregar_jugador(jugadores[46])
+
+e7 = Equipo("Medellin", "Futbol")
+e7.agregar_jugador(jugadores[6])
+e7.agregar_jugador(jugadores[29])
+e7.agregar_jugador(jugadores[41])
+e7.agregar_jugador(jugadores[44])
+
+e8 = Equipo("Medellin", "Volleyball")
+e8.agregar_jugador(jugadores[12])
+e8.agregar_jugador(jugadores[30])
+e8.agregar_jugador(jugadores[40])
+
+e9 = Equipo("Medellin", "Basketball")
+e9.agregar_jugador(jugadores[59])
+e9.agregar_jugador(jugadores[5])
+e9.agregar_jugador(jugadores[21])
+e9.agregar_jugador(jugadores[28])
+
+e14 = Equipo("Medellin", "Tenis")
+e14.agregar_jugador(jugadores[13])
+e14.agregar_jugador(jugadores[34])
+e14.agregar_jugador(jugadores[42])
+e14.agregar_jugador(jugadores[54])
+
+e15 = Equipo("Medellin", "Natacion")
+e15.agregar_jugador(jugadores[22])
+e15.agregar_jugador(jugadores[4])
+e15.agregar_jugador(jugadores[33])
+e15.agregar_jugador(jugadores[43])
+e15.agregar_jugador(jugadores[55])
+
+# Crear sedes y agregar equipos
+s1 = Sede("Sede Cali")
+s1.agregar_equipo(e1)
+s1.agregar_equipo(e2)
+s1.agregar_equipo(e3)
+s1.agregar_equipo(e10)
+s1.agregar_equipo(e11)
+
+s2 = Sede("Sede Medellin")
+s2.agregar_equipo(e7)
+s2.agregar_equipo(e8)
+s2.agregar_equipo(e9)
+s2.agregar_equipo(e14)
+s2.agregar_equipo(e15)
+
+s3 = Sede("Sede Bogota")
+s3.agregar_equipo(e4)
+s3.agregar_equipo(e5)
+s3.agregar_equipo(e6)
+s3.agregar_equipo(e12)
+s3.agregar_equipo(e13)
+
+# Ordenar los equipos dentro de cada sede
+s1.ordenar_equipos()
+s2.ordenar_equipos()
+s3.ordenar_equipos()
+
+# Mostrar resultados de las sedes
+print(f"{s1.nombre}, Rendimiento: {s1.rendimiento_promedio()}\n")
+for equipo in sede1.equipos:
+    print(f"{equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio()}")
+    print(equipo.obtener_jugadores_ordenados())
+    print()
+
+print(f"{s2.nombre}, Rendimiento: {s2.rendimiento_promedio()}\n")
+for equipo in s2.equipos:
+    print(f"{equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio()}")
+    print(equipo.obtener_jugadores_ordenados())
+    print()
+
+print(f"{s3.nombre}, Rendimiento: {s3.rendimiento_promedio()}\n")
+for equipo in s3.equipos:
+    print(f"{equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio()}")
+    print(equipo.obtener_jugadores_ordenados())
+    print()    
+
+# Ranking de jugadores
+todos_los_jugadores = jugadores[:]
+quicksort(todos_los_jugadores, 0, len(todos_los_jugadores) - 1, key=lambda x: x.rendimiento)
+print("\nRanking Jugadores:")
+print([f"{j}" for j in todos_los_jugadores])
+
+
+
+
+
+# Extraer equipos de cada sede
+equipos_sede1 = s1.equipos
+equipos_sede2 = s2.equipos
+equipos_sede3 = s3.equipos
+
+# Ordenar equipos por rendimiento promedio
+quicksort(equipos_sede1, 0, len(equipos_sede1) - 1, key=lambda x: x.rendimiento_promedio())
+quicksort(equipos_sede2, 0, len(equipos_sede2) - 1, key=lambda x: x.rendimiento_promedio())
+quicksort(equipos_sede3, 0, len(equipos_sede3) - 1, key=lambda x: x.rendimiento_promedio())
+
+# Encontrar el equipo con mayor y menor rendimiento entre todas las sedes
+todos_los_equipos = equipos_sede1 + equipos_sede2 + equipos_sede3
+
+equipo_mayor_rendimiento = max(todos_los_equipos, key=lambda x: x.rendimiento_promedio())
+equipo_menor_rendimiento = min(todos_los_equipos, key=lambda x: x.rendimiento_promedio())
+
+# Imprimir resultados
+print("\nEquipo con mayor rendimiento:", equipo_mayor_rendimiento.deporte, "en", equipo_mayor_rendimiento.sede)
+print("Equipo con menor rendimiento:", equipo_menor_rendimiento.deporte, "en", equipo_menor_rendimiento.sede)
+
+
+# Jugador con mayor y menor rendimiento
+jugador_mayor_rendimiento = todos_los_jugadores[-1]
+jugador_menor_rendimiento = todos_los_jugadores[0]
+print("\nJugador con mayor rendimiento:", jugador_mayor_rendimiento)
+print("Jugador con menor rendimiento:", jugador_menor_rendimiento)
+
+# Jugador más joven y más veterano (sin usar min y max)
+jugador_mas_joven = jugadores[0]
+jugador_mas_veterano = jugadores[0]
+
+for jugador in jugadores:
+    if jugador.edad < jugador_mas_joven.edad:
+        jugador_mas_joven = jugador
+    if jugador.edad > jugador_mas_veterano.edad:
+        jugador_mas_veterano = jugador
+
+print("\nJugador más joven:", jugador_mas_joven)
+print("Jugador más veterano:", jugador_mas_veterano)
+
+
+# Promedio de edad y rendimiento de los jugadores
+edades = [jugador.edad for jugador in jugadores]
+promedio_edad = sum(edades) / len(edades)
+promedio_rendimiento = sum(jugador.rendimiento for jugador in jugadores) / len(jugadores)
+print("\nPromedio de edad de los jugadores:", promedio_edad)
+print("Promedio de rendimiento de los jugadores:", promedio_rendimiento)

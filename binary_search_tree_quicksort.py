@@ -103,20 +103,39 @@ class Sede:
     def ordenar_equipos(self):
         quicksort(self.equipos, 0, len(self.equipos) - 1, key=lambda x: (x.rendimiento_promedio(), len(x.obtener_jugadores_ordenados())))
 
-# Lee el contenido del archivo
-print("input1")
+
+input1 = "input 1"
+print("#" * 50)
+print("{:^50}".format("input 1"))
+print("#" * 50)
+print(input1)
 with open("input1b.txt", "r") as file:
     codigo = file.read()
 
-# Ejecuta el código
+
 exec(codigo)
 
-print("input2")
-# Lee el contenido del archivo
+input2 = "input 2"
+print("#" * 50)
+print("{:^50}".format("input 2"))
+print("#" * 50)
+print(input2)
 with open("input2b.txt", "r") as file:
     codigo = file.read()
 
-# Ejecuta el código
+
+exec(codigo)
+
+
+input3 = "input 3"
+print("#" * 50)
+print("{:^50}".format("input 3"))
+print("#" * 50)
+print(input3)
+with open("input3b.txt", "r") as file:
+    codigo = file.read()
+
+
 exec(codigo)
 
 

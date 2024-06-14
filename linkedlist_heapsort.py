@@ -122,21 +122,38 @@ class Sede:
         equipos_list = self.equipos.to_list()
         return f"Sede {self.nombre}, Rendimiento: {self.rendimiento_promedio()}\n" + "\n".join([f"{equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio()}\n{equipo.jugadores.to_list()}" for equipo in equipos_list])
 
-print("input1")
-# Lee el contenido del archivo
+input1 = "input 1"
+print("#" * 50)
+print("{:^50}".format("input 1"))
+print("#" * 50)
+print(input1)
 with open("input1a.txt", "r") as file:
     codigo = file.read()
 
-# Ejecuta el código
+
 exec(codigo)
 
-
-print("input2")
-# Lee el contenido del archivo
+input2 = "input 2"
+print("#" * 50)
+print("{:^50}".format("input 2"))
+print("#" * 50)
+print(input2)
 with open("input2a.txt", "r") as file:
     codigo = file.read()
 
-# Ejecuta el código
+
+exec(codigo)
+
+
+input3 = "input 3"
+print("#" * 50)
+print("{:^50}".format("input 3"))
+print("#" * 50)
+print(input3)
+with open("input3a.txt", "r") as file:
+    codigo = file.read()
+
+
 exec(codigo)
 
 
