@@ -1,0 +1,109 @@
+jugadores = [
+    Jugador(1, "Juan", 20, 94),
+    Jugador(2, "Maria", 21, 94),
+    Jugador(3, "Pedro", 22, 21),
+    Jugador(4, "Ana", 23, 25),
+    Jugador(5, "Carlos", 24, 66),
+    Jugador(6, "Laura", 25, 52),
+    Jugador(7, "Jose", 26, 48),
+    Jugador(8, "Luis", 27, 73),
+    Jugador(9, "Sara", 28, 92),
+    Jugador(10, "Jorge", 29, 51),
+    Jugador(11, "Lorena", 30, 90),
+    Jugador(12, "Raul", 31, 100)
+]
+
+equipo1 = Equipo("Sede Cali", "Futbol")
+equipo1.agregar_jugador(jugadores[0])
+equipo1.agregar_jugador(jugadores[1])
+equipo1.agregar_jugador(jugadores[2])
+
+equipo2 = Equipo("Sede Cali", "Volleyball")
+equipo2.agregar_jugador(jugadores[3])
+equipo2.agregar_jugador(jugadores[4])
+equipo2.agregar_jugador(jugadores[5])
+
+equipo3 = Equipo("Sede Medellin", "Futbol")
+equipo3.agregar_jugador(jugadores[6])
+equipo3.agregar_jugador(jugadores[7])
+equipo3.agregar_jugador(jugadores[8])
+
+equipo4 = Equipo("Sede Medellin", "Volleyball")
+equipo4.agregar_jugador(jugadores[9])
+equipo4.agregar_jugador(jugadores[10])
+equipo4.agregar_jugador(jugadores[11])
+
+sede1 = Sede("Sede Cali")
+sede1.agregar_equipo(equipo1)
+sede1.agregar_equipo(equipo2)
+
+sede2 = Sede("Sede Medellin")
+sede2.agregar_equipo(equipo3)
+sede2.agregar_equipo(equipo4)
+
+# Ordenar equipos en las sedes
+
+
+sede1.ordenar_equipos()
+sede2.ordenar_equipos()
+
+
+
+# Mostrar resultados de las sedes
+print(f"{sede1.nombre}, Rendimiento: {sede1.rendimiento_promedio()}\n")
+for equipo in sede1.equipos:
+    print(f"{equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio()}")
+    print(equipo.obtener_jugadores_ordenados())
+    print()
+
+print(f"{sede2.nombre}, Rendimiento: {sede2.rendimiento_promedio()}\n")
+for equipo in sede2.equipos:
+    print(f"{equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio()}")
+    print(equipo.obtener_jugadores_ordenados())
+    print()
+
+# Ranking de jugadores
+todos_los_jugadores = jugadores[:]
+quicksort(todos_los_jugadores, 0, len(todos_los_jugadores) - 1, key=lambda x: x.rendimiento)
+print("\nRanking Jugadores:")
+print([f"{j}" for j in todos_los_jugadores])
+
+# Equipo con mayor y menor rendimiento
+equipos_sede1 = sede1.equipos
+equipos_sede2 = sede2.equipos
+
+# Ordenar equipos por rendimiento promedio
+quicksort(equipos_sede1, 0, len(equipos_sede1) - 1, key=lambda x: x.rendimiento_promedio())
+quicksort(equipos_sede2, 0, len(equipos_sede2) - 1, key=lambda x: x.rendimiento_promedio())
+
+equipo_mayor_rendimiento = equipos_sede2[-1]  # Último equipo de sede Medellin
+equipo_menor_rendimiento = equipos_sede1[0]  # Primer equipo de sede Cali
+
+print("\nEquipo con mayor rendimiento:", equipo_mayor_rendimiento.deporte, "en", sede2.nombre)
+print("Equipo con menor rendimiento:", equipo_menor_rendimiento.deporte, "en", sede1.nombre)
+
+# Jugador con mayor y menor rendimiento
+jugador_mayor_rendimiento = todos_los_jugadores[-1]
+jugador_menor_rendimiento = todos_los_jugadores[0]
+print("\nJugador con mayor rendimiento:", jugador_mayor_rendimiento)
+print("Jugador con menor rendimiento:", jugador_menor_rendimiento)
+
+# Jugador más joven y más veterano (sin usar min y max)
+jugador_mas_joven = jugadores[0]
+jugador_mas_veterano = jugadores[0]
+
+for jugador in jugadores:
+    if jugador.edad < jugador_mas_joven.edad:
+        jugador_mas_joven = jugador
+    if jugador.edad > jugador_mas_veterano.edad:
+        jugador_mas_veterano = jugador
+
+print("\nJugador más joven:", jugador_mas_joven)
+print("Jugador más veterano:", jugador_mas_veterano)
+
+# Promedio de edad y rendimiento de los jugadores
+edades = [jugador.edad for jugador in jugadores]
+promedio_edad = sum(edades) / len(edades)
+promedio_rendimiento = sum(jugador.rendimiento for jugador in jugadores) / len(jugadores)
+print("\nPromedio de edad de los jugadores:", promedio_edad)
+print("Promedio de rendimiento de los jugadores:", promedio_rendimiento)

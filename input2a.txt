@@ -1,0 +1,165 @@
+jugadores = [
+    Jugador(1, "Sofia Garcia", 21, 66),
+    Jugador(2, "Alejandro Torres", 27, 24),
+    Jugador(3, "Valentina Rodriguez", 19, 15),
+    Jugador(4, "Juan Lopez", 22, 78),
+    Jugador(5, "Martina Martinez", 30, 55),
+    Jugador(6, "Sebastian Perez", 25, 42),
+    Jugador(7, "Camila Fernandez", 24, 36),
+    Jugador(8, "Mateo Gonzalez", 29, 89),
+    Jugador(9, "Isabella Diaz", 40, 92),
+    Jugador(10, "Daniel Ruiz", 17, 57),
+    Jugador(11, "Luciana Sanchez", 18, 89),
+    Jugador(12, "Lucas Vasquez", 26, 82),
+    Jugador(13, "William Hernandez", 30, 44),
+    Jugador(14, "Laura Perez", 20, 78),
+    Jugador(15, "Santiago Rodriguez", 23, 32),
+    Jugador(16, "Maria Gonzalez", 28, 65),
+    Jugador(17, "Carlos Lopez", 19, 72),
+    Jugador(18, "Valeria Martinez", 21, 45),
+    Jugador(19, "Andres Perez", 30, 78),
+    Jugador(20, "Sara Hernandez", 22, 56)
+]
+
+# Crear equipos y agregar jugadores
+equipo1 = Equipo("Futbol", "Cali")
+equipo1.agregar_jugador(jugadores[9]) 
+equipo1.agregar_jugador(jugadores[1])  
+
+equipo2 = Equipo("Volleyball", "Medellin")
+equipo2.agregar_jugador(jugadores[0])  
+equipo2.agregar_jugador(jugadores[8]) 
+equipo2.agregar_jugador(jugadores[11]) 
+equipo2.agregar_jugador(jugadores[5]) 
+
+equipo3 = Equipo("Futbol", "Cali")
+equipo3.agregar_jugador(jugadores[10])  
+equipo3.agregar_jugador(jugadores[7])   
+equipo3.agregar_jugador(jugadores[6])   
+
+equipo4 = Equipo("Volleyball", "Medellin")
+equipo4.agregar_jugador(jugadores[2])  
+equipo4.agregar_jugador(jugadores[3])  
+equipo4.agregar_jugador(jugadores[4])  
+
+equipo5 = Equipo("Basketball", "Cali")
+equipo5.agregar_jugador(jugadores[12])  
+equipo5.agregar_jugador(jugadores[13])  
+equipo5.agregar_jugador(jugadores[14])  
+equipo5.agregar_jugador(jugadores[15])
+
+equipo6 = Equipo("Basketball", "Medellin")
+equipo6.agregar_jugador(jugadores[16])  
+equipo6.agregar_jugador(jugadores[17])  
+equipo6.agregar_jugador(jugadores[18])  
+equipo6.agregar_jugador(jugadores[19])  
+
+# Crear sedes y agregar equipos
+sede1 = Sede("Sede Cali")
+sede1.agregar_equipo(equipo1)
+sede1.agregar_equipo(equipo2)
+sede1.agregar_equipo(equipo5)
+
+sede2 = Sede("Sede Medellin")
+sede2.agregar_equipo(equipo3)
+sede2.agregar_equipo(equipo4)
+sede2.agregar_equipo(equipo6)
+
+for equipo in sede1.equipos.to_list():
+    equipo.ordenar_jugadores()
+
+for equipo in sede2.equipos.to_list():
+    equipo.ordenar_jugadores()
+
+
+sede1.ordenar_equipos()
+sede2.ordenar_equipos()
+
+
+for equipo in sede1.equipos.to_list():
+    equipo.ordenar_jugadores()
+
+for equipo in sede2.equipos.to_list():
+    equipo.ordenar_jugadores()
+
+
+sede1.ordenar_equipos()
+sede2.ordenar_equipos()
+
+
+
+
+# Mostrar resultados de las sedes
+print(f"{sede1}, Rendimiento: {sede1.rendimiento_promedio()}\n")
+print(f"{sede2}, Rendimiento: {sede2.rendimiento_promedio()}\n")
+
+# Ranking de jugadores
+todos_los_jugadores = jugadores[:]
+heapsort(todos_los_jugadores, key=lambda x: x.rendimiento)
+print("\nRanking Jugadores:")
+print([f"{j}" for j in todos_los_jugadores])
+
+# Equipo con mayor y menor rendimiento
+# Obtener equipos con mayor y menor rendimiento entre las dos sedes
+# Obtener equipos con mayor y menor rendimiento entre las dos sedes
+equipos_sede1 = sede1.equipos.to_list()
+equipos_sede2 = sede2.equipos.to_list()
+
+# Combinar todos los equipos
+todos_los_equipos = equipos_sede1 + equipos_sede2
+
+# Ordenar todos los equipos por rendimiento promedio
+heapsort(todos_los_equipos, key=lambda x: x.rendimiento_promedio())
+
+# Equipo con mayor y menor rendimiento
+equipo_mayor_rendimiento = todos_los_equipos[-1]
+equipo_menor_rendimiento = todos_los_equipos[0]
+
+# Obtener la sede de cada equipo
+sede_equipo_mayor = "N/A" if not equipo_mayor_rendimiento else sede2.nombre if equipo_mayor_rendimiento in equipos_sede2 else sede1.nombre
+sede_equipo_menor = "N/A" if not equipo_menor_rendimiento else sede2.nombre if equipo_menor_rendimiento in equipos_sede2 else sede1.nombre
+
+# Mostrar resultados
+print("\nEquipo con mayor rendimiento entre las dos sedes:", end=" ")
+if equipo_mayor_rendimiento:
+    print(f"{equipo_mayor_rendimiento.deporte} en {sede_equipo_mayor}")
+else:
+    print("N/A")
+
+print("Equipo con menor rendimiento entre las dos sedes:", end=" ")
+if equipo_menor_rendimiento:
+    print(f"{equipo_menor_rendimiento.deporte} en {sede_equipo_menor}")
+else:
+    print("N/A")
+
+
+
+
+# Jugador con mayor y menor rendimiento
+jugador_mayor_rendimiento = todos_los_jugadores[-1]
+jugador_menor_rendimiento = todos_los_jugadores[0]
+print("\nJugador con mayor rendimiento:", jugador_mayor_rendimiento)
+print("Jugador con menor rendimiento:", jugador_menor_rendimiento)
+
+# Jugador más joven y más veterano (sin usar min y max)
+jugador_mas_joven = jugadores[0]
+jugador_mas_veterano = jugadores[0]
+
+for jugador in jugadores:
+    if jugador.edad < jugador_mas_joven.edad:
+        jugador_mas_joven = jugador
+    if jugador.edad > jugador_mas_veterano.edad:
+        jugador_mas_veterano = jugador
+
+print("\nJugador más joven:", jugador_mas_joven)
+print("Jugador más veterano:", jugador_mas_veterano)
+
+
+# Promedio de edad y rendimiento de los jugadores
+edades = [jugador.edad for jugador in jugadores]
+rendimientos = [jugador.rendimiento for jugador in jugadores]
+promedio_edad = sum(edades) / len(edades)
+promedio_rendimiento = sum(rendimientos) / len(rendimientos)
+print("\nPromedio de edad de los jugadores:", promedio_edad)
+print("Promedio de rendimiento de los jugadores:", promedio_rendimiento)
+
