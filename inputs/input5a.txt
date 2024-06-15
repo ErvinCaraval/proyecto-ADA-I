@@ -117,15 +117,23 @@ equipos = [
     Equipo("Volleyball", "Sede Medellin"),
     Equipo("Basketball", "Sede Medellin"),
     Equipo("Tenis", "Sede Medellin"),
-    Equipo("Natacion", "Sede Medellin")
+    Equipo("Natacion", "Sede Medellin"),
+    Equipo("Futbol", "Sede Barranquilla"),
+    Equipo("Volleyball", "Sede Barranquilla"),
+    Equipo("Basketball", "Sede Barranquilla"),
+    Equipo("Tenis", "Sede Barranquilla"),
+    Equipo("Natacion", "Sede Barranquilla"),
 ]
+
+
+
 
 # Crear sedes y agregar equipos
 sedes = {
     "Sede Cali": Sede("Sede Cali"),
     "Sede Bogota": Sede("Sede Bogota"),
     "Sede Medellin": Sede("Sede Medellin"),
-    
+    "Sede Barranquilla": Sede("Sede Barranquilla")
 }
 
 
