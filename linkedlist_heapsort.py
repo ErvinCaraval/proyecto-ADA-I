@@ -149,7 +149,7 @@ def mostrar_mejor_y_peor_jugador(jugadores):
     print(f"Jugador con mayor rendimiento: {{ {jugador_mayor_rendimiento.id} , {jugador_mayor_rendimiento.nombre} , {jugador_mayor_rendimiento.rendimiento} }}")
     print(f"Jugador con menor rendimiento: {{ {jugador_menor_rendimiento.id} , {jugador_menor_rendimiento.nombre} , {jugador_menor_rendimiento.rendimiento} }}\n")
 
-# Función para mostrar al jugador más joven y más veterano
+# Función para mostrar al jugador más joven y más veteran
 def mostrar_jugador_mas_joven_y_veterano(jugadores):
     jugador_mas_joven = jugadores[0]
     jugador_mas_veterano = jugadores[0]
