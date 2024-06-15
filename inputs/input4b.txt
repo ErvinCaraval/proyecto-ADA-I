@@ -101,131 +101,56 @@ jugadores = [
     Jugador(100,"Sara Jimenez", 25, 84)
 ]
 
+
 # Crear equipos
 equipos = [
-    Equipo("Futbol", "Sede Cali"),
-    Equipo("Volleyball", "Sede Cali"),
-    Equipo("Basketball", "Sede Cali"),
-    Equipo("Tenis", "Sede Cali"),
-    Equipo("Natacion", "Sede Cali"),
-    Equipo("Futbol", "Sede Bogota"),
-    Equipo("Volleyball", "Sede Bogota"),
-    Equipo("Basketball", "Sede Bogota"),
-    Equipo("Tenis", "Sede Bogota"),
-    Equipo("Natacion", "Sede Bogota"),
-    Equipo("Futbol", "Sede Medellin"),
-    Equipo("Volleyball", "Sede Medellin"),
-    Equipo("Basketball", "Sede Medellin"),
-    Equipo("Tenis", "Sede Medellin"),
-    Equipo("Natacion", "Sede Medellin")
+    Equipo("Sede Cali", "Futbol"),
+    Equipo("Sede Cali", "Volleyball"),
+    Equipo("Sede Cali", "Basketball"),
+    Equipo("Sede Cali", "Tenis"),
+    Equipo("Sede Cali", "Natacion"),
+    Equipo("Sede Bogota", "Futbol"),
+    Equipo("Sede Bogota", "Volleyball"),
+    Equipo("Sede Bogota", "Basketball"),
+    Equipo("Sede Bogota", "Tenis"),
+    Equipo("Sede Bogota", "Natacion"),
+    Equipo("Sede Medellin", "Futbol"),
+    Equipo("Sede Medellin", "Volleyball"),
+    Equipo("Sede Medellin", "Basketball"),
+    Equipo("Sede Medellin", "Tenis"),
+    Equipo("Sede Medellin", "Natacion")
 ]
+
+
+
+
+# Crear sedes y agregar equipos
+sedes = {
+    "Sede Cali": Sede("Sede Cali"),
+    "Sede Bogota": Sede("Sede Bogota"),
+    "Sede Medellin": Sede("Sede Medellin"),
+    
+}
+
 
 # Asignar jugadores a equipos
 for i, jugador in enumerate(jugadores):
     equipos[i % len(equipos)].agregar_jugador(jugador)
 
-# Crear sedes y agregar equipos
-s1 = Sede("Sede Cali")
-s1.agregar_equipo(e1)
-s1.agregar_equipo(e2)
-s1.agregar_equipo(e3)
-s1.agregar_equipo(e10)
-s1.agregar_equipo(e11)
 
-s2 = Sede("Sede Medellin")
-s2.agregar_equipo(e7)
-s2.agregar_equipo(e8)
-s2.agregar_equipo(e9)
-s2.agregar_equipo(e14)
-s2.agregar_equipo(e15)
-
-s3 = Sede("Sede Bogota")
-s3.agregar_equipo(e4)
-s3.agregar_equipo(e5)
-s3.agregar_equipo(e6)
-s3.agregar_equipo(e12)
-s3.agregar_equipo(e13)
+for equipo in equipos:
+    sede_nombre = equipo.sede
+    sede = sedes[sede_nombre]
+    sede.agregar_equipo(equipo)
 
 
+# Agregar equipos y jugadores a las sedes (ejemplo de datos)
+# Aquí deberías agregar los datos de los equipos y jugadores
 
-# Ordenar los equipos dentro de cada sede
-s1.ordenar_equipos()
-s2.ordenar_equipos()
-s3.ordenar_equipos()
-
-# Mostrar resultados de las sedes
-print(f"{s1.nombre}, Rendimiento: {s1.rendimiento_promedio()}\n")
-for equipo in sede1.equipos:
-    print(f"{equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio()}")
-    print(equipo.obtener_jugadores_ordenados())
-    print()
-
-print(f"{s2.nombre}, Rendimiento: {s2.rendimiento_promedio()}\n")
-for equipo in s2.equipos:
-    print(f"{equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio()}")
-    print(equipo.obtener_jugadores_ordenados())
-    print()
-
-print(f"{s3.nombre}, Rendimiento: {s3.rendimiento_promedio()}\n")
-for equipo in s3.equipos:
-    print(f"{equipo.deporte}, Rendimiento: {equipo.rendimiento_promedio()}")
-    print(equipo.obtener_jugadores_ordenados())
-    print()    
-
-
-# Ranking de jugadores
-todos_los_jugadores = jugadores[:]
-quicksort(todos_los_jugadores, 0, len(todos_los_jugadores) - 1, key=lambda x: x.rendimiento)
-ranking_jugadores = ', '.join(str(j.id) for j in todos_los_jugadores)
-print(f"Ranking Jugadores:\n{{ {ranking_jugadores} }}\n")
-
-
-
-# Extraer equipos de cada sede
-equipos_sede1 = s1.equipos
-equipos_sede2 = s2.equipos
-equipos_sede3 = s3.equipos
-
-# Ordenar equipos por rendimiento promedio
-quicksort(equipos_sede1, 0, len(equipos_sede1) - 1, key=lambda x: x.rendimiento_promedio())
-quicksort(equipos_sede2, 0, len(equipos_sede2) - 1, key=lambda x: x.rendimiento_promedio())
-quicksort(equipos_sede3, 0, len(equipos_sede3) - 1, key=lambda x: x.rendimiento_promedio())
-
-# Encontrar el equipo con mayor y menor rendimiento entre todas las sedes
-todos_los_equipos = equipos_sede1 + equipos_sede2 + equipos_sede3
-
-equipo_mayor_rendimiento = max(todos_los_equipos, key=lambda x: x.rendimiento_promedio())
-equipo_menor_rendimiento = min(todos_los_equipos, key=lambda x: x.rendimiento_promedio())
-
-# Imprimir resultados
-print("\nEquipo con mayor rendimiento:", equipo_mayor_rendimiento.deporte, "en", equipo_mayor_rendimiento.sede)
-print("Equipo con menor rendimiento:", equipo_menor_rendimiento.deporte, "en", equipo_menor_rendimiento.sede)
-
-
-# Jugador con mayor y menor rendimiento
-jugador_mayor_rendimiento = todos_los_jugadores[-1]
-jugador_menor_rendimiento = todos_los_jugadores[0]
-print(f"Jugador con mayor rendimiento: {{ {jugador_mayor_rendimiento.id} , {jugador_mayor_rendimiento.nombre} , {jugador_mayor_rendimiento.rendimiento} }}")
-print(f"Jugador con menor rendimiento: {{ {jugador_menor_rendimiento.id} , {jugador_menor_rendimiento.nombre} , {jugador_menor_rendimiento.rendimiento} }}\n")
-
-# Jugador más joven y más veterano (sin usar min y max)
-jugador_mas_joven = jugadores[0]
-jugador_mas_veterano = jugadores[0]
-
-for jugador in jugadores:
-    if jugador.edad < jugador_mas_joven.edad:
-        jugador_mas_joven = jugador
-    if jugador.edad > jugador_mas_veterano.edad:
-        jugador_mas_veterano = jugador
-
-print(f"jugador mas joven: {{ {jugador_mas_joven.id} , {jugador_mas_joven.nombre} , {jugador_mas_joven.edad} }}")
-print(f"jugador mas veterano: {{ {jugador_mas_veterano.id} , {jugador_mas_veterano.nombre} , {jugador_mas_veterano.edad} }}\n")
-
-
-
-# Promedio de edad y rendimiento de los jugadores
-edades = [jugador.edad for jugador in jugadores]
-promedio_edad = sum(edades) / len(edades)
-promedio_rendimiento = sum(jugador.rendimiento for jugador in jugadores) / len(jugadores)
-print("\nPromedio de edad de los jugadores:", promedio_edad)
-print("Promedio de rendimiento de los jugadores:", promedio_rendimiento)
+# Llama a las funciones con tus datos
+mostrar_resultados_sedes(sedes)
+mostrar_ranking_jugadores(jugadores)
+mostrar_mejor_y_peor_jugador(jugadores)
+mostrar_equipo_mejor_y_peor_rendimiento(sedes)
+mostrar_jugador_mas_joven_y_veterano(jugadores)
+mostrar_promedio_edad_y_rendimiento(jugadores)

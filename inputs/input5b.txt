@@ -103,29 +103,37 @@ jugadores = [
 
 # Crear equipos
 equipos = [
-    Equipo("Futbol", "Sede Cali"),
-    Equipo("Volleyball", "Sede Cali"),
-    Equipo("Basketball", "Sede Cali"),
-    Equipo("Tenis", "Sede Cali"),
-    Equipo("Natacion", "Sede Cali"),
-    Equipo("Futbol", "Sede Bogota"),
-    Equipo("Volleyball", "Sede Bogota"),
-    Equipo("Basketball", "Sede Bogota"),
-    Equipo("Tenis", "Sede Bogota"),
-    Equipo("Natacion", "Sede Bogota"),
-    Equipo("Futbol", "Sede Medellin"),
-    Equipo("Volleyball", "Sede Medellin"),
-    Equipo("Basketball", "Sede Medellin"),
-    Equipo("Tenis", "Sede Medellin"),
-    Equipo("Natacion", "Sede Medellin")
+    Equipo("Sede Cali", "Futbol"),
+    Equipo("Sede Cali", "Volleyball"),
+    Equipo("Sede Cali", "Basketball"),
+    Equipo("Sede Cali", "Tenis"),
+    Equipo("Sede Cali", "Natacion"),
+    Equipo("Sede Bogota", "Futbol"),
+    Equipo("Sede Bogota", "Volleyball"),
+    Equipo("Sede Bogota", "Basketball"),
+    Equipo("Sede Bogota", "Tenis"),
+    Equipo("Sede Bogota", "Natacion"),
+    Equipo("Sede Medellin", "Futbol"),
+    Equipo("Sede Medellin", "Volleyball"),
+    Equipo("Sede Medellin", "Basketball"),
+    Equipo("Sede Medellin", "Tenis"),
+    Equipo("Sede Medellin", "Natacion"),
+    Equipo("Sede Barranquilla", "Futbol"),
+    Equipo("Sede Barranquilla", "Volleyball"),
+    Equipo("Sede Barranquilla", "Basketball"),
+    Equipo("Sede Barranquilla", "Tenis"),
+    Equipo("Sede Barranquilla", "Natacion"),
 ]
+
+
+
 
 # Crear sedes y agregar equipos
 sedes = {
     "Sede Cali": Sede("Sede Cali"),
     "Sede Bogota": Sede("Sede Bogota"),
     "Sede Medellin": Sede("Sede Medellin"),
-    
+    "Sede Barranquilla": Sede("Sede Barranquilla")
 }
 
 

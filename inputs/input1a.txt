@@ -54,81 +54,15 @@ sede1.ordenar_equipos()
 sede2.ordenar_equipos()
 
 
+sedes = {
+    "Sede Cali": sede1,
+    "Sede Medellin": sede2,
+}
 
-
-
-
-# Mostrar resultados de las sedes
-print(f"{sede1}, Rendimiento: {sede1.rendimiento_promedio()}\n")
-print(f"{sede2}, Rendimiento: {sede2.rendimiento_promedio()}\n")
-
-# Ranking de jugadores
-todos_los_jugadores = jugadores[:]
-heapsort(todos_los_jugadores, key=lambda x: x.rendimiento)
-print("\nRanking Jugadores:")
-print([f"{j}" for j in todos_los_jugadores])
-
-# Equipo con mayor y menor rendimiento
-# Obtener equipos con mayor y menor rendimiento entre las dos sedes
-# Obtener equipos con mayor y menor rendimiento entre las dos sedes
-equipos_sede1 = sede1.equipos.to_list()
-equipos_sede2 = sede2.equipos.to_list()
-
-# Combinar todos los equipos
-todos_los_equipos = equipos_sede1 + equipos_sede2
-
-# Ordenar todos los equipos por rendimiento promedio
-heapsort(todos_los_equipos, key=lambda x: x.rendimiento_promedio())
-
-# Equipo con mayor y menor rendimiento
-equipo_mayor_rendimiento = todos_los_equipos[-1]
-equipo_menor_rendimiento = todos_los_equipos[0]
-
-# Obtener la sede de cada equipo
-sede_equipo_mayor = "N/A" if not equipo_mayor_rendimiento else sede2.nombre if equipo_mayor_rendimiento in equipos_sede2 else sede1.nombre
-sede_equipo_menor = "N/A" if not equipo_menor_rendimiento else sede2.nombre if equipo_menor_rendimiento in equipos_sede2 else sede1.nombre
-
-# Mostrar resultados
-print("\nEquipo con mayor rendimiento entre las dos sedes:", end=" ")
-if equipo_mayor_rendimiento:
-    print(f"{equipo_mayor_rendimiento.deporte} en {sede_equipo_mayor}")
-else:
-    print("N/A")
-
-print("Equipo con menor rendimiento entre las dos sedes:", end=" ")
-if equipo_menor_rendimiento:
-    print(f"{equipo_menor_rendimiento.deporte} en {sede_equipo_menor}")
-else:
-    print("N/A")
-
-
-
-
-# Jugador con mayor y menor rendimiento
-jugador_mayor_rendimiento = todos_los_jugadores[-1]
-jugador_menor_rendimiento = todos_los_jugadores[0]
-print(f"Jugador con mayor rendimiento: {{ {jugador_mayor_rendimiento.id} , {jugador_mayor_rendimiento.nombre} , {jugador_mayor_rendimiento.rendimiento} }}")
-print(f"Jugador con menor rendimiento: {{ {jugador_menor_rendimiento.id} , {jugador_menor_rendimiento.nombre} , {jugador_menor_rendimiento.rendimiento} }}\n")
-
-# Jugador más joven y más veterano (sin usar min y max)
-jugador_mas_joven = jugadores[0]
-jugador_mas_veterano = jugadores[0]
-
-for jugador in jugadores:
-    if jugador.edad < jugador_mas_joven.edad:
-        jugador_mas_joven = jugador
-    if jugador.edad > jugador_mas_veterano.edad:
-        jugador_mas_veterano = jugador
-
-print(f"jugador mas joven: {{ {jugador_mas_joven.id} , {jugador_mas_joven.nombre} , {jugador_mas_joven.edad} }}")
-print(f"jugador mas veterano: {{ {jugador_mas_veterano.id} , {jugador_mas_veterano.nombre} , {jugador_mas_veterano.edad} }}\n")
-
-
-# Promedio de edad y rendimiento de los jugadores
-edades = [jugador.edad for jugador in jugadores]
-rendimientos = [jugador.rendimiento for jugador in jugadores]
-promedio_edad = sum(edades) / len(edades)
-promedio_rendimiento = sum(rendimientos) / len(rendimientos)
-print("\nPromedio de edad de los jugadores:", promedio_edad)
-print("Promedio de rendimiento de los jugadores:", promedio_rendimiento)
-
+# Llama a las funciones con tus datos
+mostrar_resultados_sedes(sedes)
+mostrar_ranking_jugadores(jugadores)
+mostrar_mejor_y_peor_jugador(jugadores)
+mostrar_equipo_mejor_y_peor_rendimiento(sedes)
+mostrar_jugador_mas_joven_y_veterano(jugadores)
+mostrar_promedio_edad_y_rendimiento(jugadores)
