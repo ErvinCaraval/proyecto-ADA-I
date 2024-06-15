@@ -116,7 +116,7 @@ print("#" * 50)
 print("{:^50}".format("input 1"))
 print("#" * 50)
 print(input1)
-with open("input1b.txt", "r") as file:
+with open("inputs/input1b.txt", "r") as file:
     codigo = file.read()
 
 
@@ -127,7 +127,7 @@ print("#" * 50)
 print("{:^50}".format("input 2"))
 print("#" * 50)
 print(input2)
-with open("input2b.txt", "r") as file:
+with open("inputs/input2b.txt", "r") as file:
     codigo = file.read()
 
 
@@ -139,10 +139,31 @@ print("#" * 50)
 print("{:^50}".format("input 3"))
 print("#" * 50)
 print(input3)
-with open("input3b.txt", "r") as file:
+with open("inputs/input3b.txt", "r") as file:
     codigo = file.read()
 
 
 exec(codigo)
+
+
+
+input4 = "input 4"
+print("#" * 50)
+print("{:^50}".format("input 4"))
+print("#" * 50)
+print(input4)
+with open("inputs/input4b.txt", "r") as file:
+    codigo = file.read()
+
+
+exec(codigo)
+
+
+
+
+
+
+
+
 
 

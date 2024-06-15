@@ -199,13 +199,12 @@ for equipo in s3.equipos:
     print(equipo.obtener_jugadores_ordenados())
     print()    
 
+
 # Ranking de jugadores
 todos_los_jugadores = jugadores[:]
 quicksort(todos_los_jugadores, 0, len(todos_los_jugadores) - 1, key=lambda x: x.rendimiento)
-print("\nRanking Jugadores:")
-print([f"{j}" for j in todos_los_jugadores])
-
-
+ranking_jugadores = ', '.join(str(j.id) for j in todos_los_jugadores)
+print(f"Ranking Jugadores:\n{{ {ranking_jugadores} }}\n")
 
 
 
