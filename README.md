@@ -43,7 +43,7 @@ Este archivo contiene la implementación de un árbol de búsqueda binaria y el 
 
 # Archivos de entrada y salida para las  versiónes  del programa
 
-En este proyecto, los archivos `input1a.txt`, `input1b.txt`, `input2a.txt`, `input2b.txt`, `input3a.txt`, `input3b.txt`, `input4a.txt`, `input4b.txt`, `input6a.txt` y `input6b.txt` contienen datos de entrada  y las respectivas salidas para probar el programa, los archivos input.txt que tinen letra "a" son las pruebas de la version realizada con linkedlist_heapsort.py y los archivos con  letra "b" son las pruebas de binary_search_tree_quicksort.py .
+En este proyecto, los archivos `input1a.txt`, `input1b.txt`, `input2a.txt`, `input2b.txt`, `input3a.txt`, `input3b.txt`, `input4a.txt`, `input4b.txt`,`input5a.txt`,`input5b.txt`, `input6a.txt` y `input6b.txt` contienen datos de entrada  y las respectivas salidas para probar el programa, los archivos input.txt que tinen letra "a" son las pruebas de la version realizada con linkedlist_heapsort.py y los archivos con  letra "b" son las pruebas de binary_search_tree_quicksort.py .
 
 ## Descripción de los archivos de entrada y salida
 
