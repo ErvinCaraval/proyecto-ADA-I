@@ -23,6 +23,27 @@ Una lista enlazada que se utiliza para almacenar jugadores y equipos. Tiene los 
 - `Equipo`: Representa un equipo con jugadores. Tiene métodos para agregar jugadores, ordenarlos por rendimiento y calcular el rendimiento promedio del equipo.
 - `Sede`: Representa una sede que contiene equipos. Tiene métodos para agregar equipos, ordenarlos por rendimiento y calcular el rendimiento promedio de la sede.
 
+## Descripción de las funciones de salida
+
+### `mostrar_resultados_sedes(sedes)`
+Esta función muestra los resultados de rendimiento de cada sede y sus respectivos equipos. Para cada equipo, se muestra su rendimiento promedio y la lista de jugadores ordenados por rendimiento.
+
+### `mostrar_ranking_jugadores(jugadores)`
+Muestra el ranking de jugadores ordenados por su rendimiento, desde el más alto hasta el más bajo.
+
+### `mostrar_mejor_y_peor_jugador(jugadores)`
+Muestra al jugador con el mayor y menor rendimiento en función de su puntaje de rendimiento.
+
+### `mostrar_jugador_mas_joven_y_veterano(jugadores)`
+Encuentra al jugador más joven y al más veterano en función de su edad.
+
+### `mostrar_promedio_edad_y_rendimiento(jugadores)`
+Calcula y muestra el promedio de edad y rendimiento de todos los jugadores.
+
+### `mostrar_equipo_mejor_y_peor_rendimiento(sedes)`
+Encuentra y muestra el equipo con el mayor y menor rendimiento entre todas las sedes. Se ordenan los equipos por rendimiento promedio.
+
+
 ## binary_search_tree_quicksort.py
 
 Este archivo contiene la implementación de un árbol de búsqueda binaria y el algoritmo de ordenamiento quicksort adaptado para trabajar con él.
@@ -40,6 +61,27 @@ Este archivo contiene la implementación de un árbol de búsqueda binaria y el 
 - `quicksort(arr, low, high, key)`: Ordena un arreglo utilizando el algoritmo quicksort adaptado para considerar el rendimiento y la edad en caso de empate.
 
 ---
+
+## Descripción de las funciones de salida
+
+### `mostrar_resultados_sedes(sedes)`
+Esta función muestra los resultados de rendimiento de cada sede y sus respectivos equipos, junto con el rendimiento promedio de cada equipo y la lista de jugadores ordenados dentro de cada equipo.
+
+### `mostrar_ranking_jugadores(jugadores)`
+Esta función muestra el ranking de jugadores ordenados por su rendimiento, desde el más alto hasta el más bajo.
+
+### `mostrar_mejor_y_peor_jugador(jugadores)`
+Muestra al jugador con el mayor y menor rendimiento en función de su puntaje de rendimiento.
+
+### `mostrar_jugador_mas_joven_y_veterano(jugadores)`
+Muestra al jugador más joven y al más veterano en función de su edad.
+
+### `mostrar_promedio_edad_y_rendimiento(jugadores)`
+Calcula y muestra el promedio de edad y rendimiento de todos los jugadores.
+
+### `mostrar_equipo_mejor_y_peor_rendimiento(sedes)`
+Encuentra y muestra el equipo con el mayor y menor rendimiento entre todas las sedes.
+
 
 # Archivos de entrada y salida para las  versiónes  del programa
 
