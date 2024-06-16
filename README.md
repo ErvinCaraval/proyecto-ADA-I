@@ -41,3 +41,47 @@ Este archivo contiene la implementación de un árbol de búsqueda binaria y el 
 
 ---
 
+# Archivos de entrada y salida para las  versiónes  del programa
+
+En este proyecto, los archivos `input1a.txt`, `input1b.txt`, `input2a.txt`, `input2b.txt`, `input3a.txt`, `input3b.txt`, `input4a.txt`, `input4b.txt`, `input6a.txt` y `input6b.txt` contienen datos de entrada  y las respectivas salidas para probar el programa, los archivos input.txt que tinen letra "a" son las pruebas de la version realizada con linkedlist_heapsort.py y los archivos con  letra "b" son las pruebas de binary_search_tree_quicksort.py .
+
+## Descripción de los archivos de entrada y salida
+
+### input1a.txt / input1b.txt
+
+- **Tamaño de entrada de jugadores:** 12
+- **Tamaño de entrada de equipos:** 4
+- **Tamaño de entrada de sedes:** 2
+
+### input2a.txt / input2b.txt
+
+- **Tamaño de entrada de jugadores:** 20
+- **Tamaño de entrada de equipos:** 6
+- **Tamaño de entrada de sedes:** 2
+
+### input3a.txt / input3b.txt
+
+- **Tamaño de entrada de jugadores:** 60
+- **Tamaño de entrada de equipos:** 15
+- **Tamaño de entrada de sedes:** 3
+
+### input4a.txt / input4b.txt
+
+- **Tamaño de entrada de jugadores:** 100
+- **Tamaño de entrada de equipos:** 15
+- **Tamaño de entrada de sedes:** 3
+
+### input5a.txt / input5b.txt
+
+- **Tamaño de entrada de jugadores:** 100
+- **Tamaño de entrada de equipos:** 20
+- **Tamaño de entrada de sedes:** 4
+
+### input6a.txt / input6b.txt
+
+- **Tamaño de entrada de jugadores:** 200
+- **Tamaño de entrada de equipos:** 40
+- **Tamaño de entrada de sedes:** 8
+
+Estos archivos se utilizan como entrada para el programa y contienen datos de jugadores, equipos y sedes en un formato específico, y sus salidad qu se visualizan por consola. 
+
