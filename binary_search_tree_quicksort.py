@@ -37,18 +37,17 @@ class BinarySearchTree:
             res = res + self._in_order(node.right)
         return res
 
-def quicksort(arr, low, high, key=lambda x: x):
+def quicksort(arr, low, high, key=lambda x: x,consider_age=True):
     if low < high:
-        pi = partition(arr, low, high, key)
-        quicksort(arr, low, pi - 1, key)
-        quicksort(arr, pi + 1, high, key)
+        pi = partition(arr, low, high, key,consider_age)
+        quicksort(arr, low, pi - 1, key,consider_age)
+        quicksort(arr, pi + 1, high, key,consider_age)
 
-def partition(arr, low, high, key):
+def partition(arr, low, high, key, consider_age):
     pivot = key(arr[high])
     i = low - 1
     for j in range(low, high):
-        # Modificamos la comparación para considerar la edad en caso de empate en el rendimiento
-        if key(arr[j]) < pivot or (key(arr[j]) == pivot and arr[j].edad > arr[high].edad):
+        if key(arr[j]) < pivot or (key(arr[j]) == pivot and consider_age and hasattr(arr[j], 'edad')):
             i += 1
             arr[i], arr[j] = arr[j], arr[i]
     arr[i + 1], arr[high] = arr[high], arr[i + 1]
@@ -124,7 +123,7 @@ def mostrar_resultados_sedes(sedes):
 
 # Función para mostrar el ranking de jugadores
 def mostrar_ranking_jugadores(jugadores):
-    quicksort(jugadores, 0, len(jugadores) - 1, key=lambda x: x.rendimiento)
+    quicksort(jugadores, 0, len(jugadores) - 1, key=lambda x: x.rendimiento,consider_age=False)
     ranking_jugadores = ', '.join(str(j.id) for j in jugadores)
     print(f"Ranking Jugadores:\n{{ {ranking_jugadores} }}\n")
 
@@ -160,20 +159,33 @@ def mostrar_promedio_edad_y_rendimiento(jugadores):
 
 # Función para encontrar el equipo con mayor y menor rendimiento
 def mostrar_equipo_mejor_y_peor_rendimiento(sedes):
-    mejor_equipo = None
-    peor_equipo = None
+    todos_los_equipos = []
 
     for sede in sedes.values():
-        for equipo in sede.equipos:
-            if not mejor_equipo or equipo.rendimiento_promedio() > mejor_equipo.rendimiento_promedio():
-                mejor_equipo = equipo
-            if not peor_equipo or equipo.rendimiento_promedio() < peor_equipo.rendimiento_promedio():
-                peor_equipo = equipo
+        todos_los_equipos.extend(sede.equipos)
 
-    print(f"Equipo con mayor rendimiento: {mejor_equipo.deporte} Sede {mejor_equipo.sede}")
-    print(f"Equipo con menor rendimiento: {peor_equipo.deporte} Sede {peor_equipo.sede}")
+    # Ordenar todos los equipos por rendimiento promedio usando quicksort
+    quicksort(todos_los_equipos, 0, len(todos_los_equipos) - 1, key=lambda x: x.rendimiento_promedio(), consider_age=False)
 
+    # Equipo con mayor y menor rendimiento
+    equipo_mayor_rendimiento = todos_los_equipos[-1] if todos_los_equipos else None
+    equipo_menor_rendimiento = todos_los_equipos[0] if todos_los_equipos else None
 
+    # Obtener la sede de cada equipo
+    sede_equipo_mayor = next((sede.nombre for sede in sedes.values() if equipo_mayor_rendimiento in sede.equipos), "N/A")
+    sede_equipo_menor = next((sede.nombre for sede in sedes.values() if equipo_menor_rendimiento in sede.equipos), "N/A")
+
+    print("Equipo con mayor rendimiento entre las sedes:", end=" ")
+    if equipo_mayor_rendimiento:
+        print(f"{equipo_mayor_rendimiento.deporte} en {sede_equipo_mayor}")
+    else:
+        print("N/A")
+
+    print("Equipo con menor rendimiento entre las sedes:", end=" ")
+    if equipo_menor_rendimiento:
+        print(f"{equipo_menor_rendimiento.deporte} en {sede_equipo_menor}")
+    else:
+        print("N/A")
 
 
 
