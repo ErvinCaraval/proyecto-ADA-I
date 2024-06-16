@@ -125,5 +125,15 @@ En este proyecto, los archivos `input1a.txt`, `input1b.txt`, `input2a.txt`, `inp
 - **Tamaño de entrada de equipos:** 40
 - **Tamaño de entrada de sedes:** 8
 
+
+## Descripción de los archivos de salida funciones de salida todos los  input.txt 
+
+- **mostrar_resultados_sedes(sedes)**
+- **mostrar_ranking_jugadores(jugadores)**
+- **mostrar_mejor_y_peor_jugador(jugadores)**
+- **mostrar_equipo_mejor_y_peor_rendimiento(sedes)**
+- **mostrar_jugador_mas_joven_y_veterano(jugadores)**
+- **mostrar_promedio_edad_y_rendimiento(jugadores)**
+
 Estos archivos se utilizan como entrada para el programa y contienen datos de jugadores, equipos y sedes en un formato específico, y sus salidas que se visualizan por consola. 
 
