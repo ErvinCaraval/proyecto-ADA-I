@@ -83,5 +83,5 @@ En este proyecto, los archivos `input1a.txt`, `input1b.txt`, `input2a.txt`, `inp
 - **Tamaño de entrada de equipos:** 40
 - **Tamaño de entrada de sedes:** 8
 
-Estos archivos se utilizan como entrada para el programa y contienen datos de jugadores, equipos y sedes en un formato específico, y sus salidad qu se visualizan por consola. 
+Estos archivos se utilizan como entrada para el programa y contienen datos de jugadores, equipos y sedes en un formato específico, y sus salidas que se visualizan por consola. 
 
