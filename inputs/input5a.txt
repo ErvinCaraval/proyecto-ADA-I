@@ -147,6 +147,8 @@ for equipo in equipos:
     sede = sedes[sede_nombre]
     sede.agregar_equipo(equipo)
 
+ 
+
 
 # Agregar equipos y jugadores a las sedes (ejemplo de datos)
 # Aquí deberías agregar los datos de los equipos y jugadores

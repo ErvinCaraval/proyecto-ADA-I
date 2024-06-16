@@ -39,32 +39,33 @@ class LinkedList:
         for item in lst:
             self.append(item)
 
-def heapify(arr, n, i, key=lambda x: x):
+def heapify(arr, n, i, key=lambda x: x, consider_age=True):
     largest = i
     l = 2 * i + 1
     r = 2 * i + 2
 
     if l < n and key(arr[l]) > key(arr[largest]):
         largest = l
-    elif l < n and key(arr[l]) == key(arr[largest]) and arr[l].edad < arr[largest].edad:  # Desempate por edad
+    elif consider_age and l < n and key(arr[l]) == key(arr[largest]) and hasattr(arr[l], 'edad'):
         largest = l
 
     if r < n and key(arr[r]) > key(arr[largest]):
         largest = r
-    elif r < n and key(arr[r]) == key(arr[largest]) and arr[r].edad < arr[largest].edad:  # Desempate por edad
+    elif consider_age and r < n and key(arr[r]) == key(arr[largest]) and hasattr(arr[r], 'edad'):
         largest = r
 
     if largest != i:
         arr[i], arr[largest] = arr[largest], arr[i]
-        heapify(arr, n, largest, key)
+        heapify(arr, n, largest, key, consider_age)
 
-def heapsort(arr, key=lambda x: x):
+def heapsort(arr, key=lambda x: x, consider_age=True):
     n = len(arr)
     for i in range(n // 2 - 1, -1, -1):
-        heapify(arr, n, i, key)
+        heapify(arr, n, i, key, consider_age)
     for i in range(n - 1, 0, -1):
         arr[i], arr[0] = arr[0], arr[i]
-        heapify(arr, i, 0, key)
+        heapify(arr, i, 0, key, consider_age)
+
 
 class Jugador:
     def __init__(self, id, nombre, edad, rendimiento):
@@ -174,20 +175,33 @@ def mostrar_promedio_edad_y_rendimiento(jugadores):
 
 # Función para encontrar el equipo con mayor y menor rendimiento
 def mostrar_equipo_mejor_y_peor_rendimiento(sedes):
-    mejor_equipo = None
-    peor_equipo = None
+    todos_los_equipos = []
 
     for sede in sedes.values():
-        for equipo in sede.equipos:
-            if not mejor_equipo or equipo.rendimiento_promedio() > mejor_equipo.rendimiento_promedio():
-                mejor_equipo = equipo
-            if not peor_equipo or equipo.rendimiento_promedio() < peor_equipo.rendimiento_promedio():
-                peor_equipo = equipo
+        todos_los_equipos.extend(sede.equipos.to_list())
 
-    print(f"Equipo con mayor rendimiento: {mejor_equipo.deporte} Sede {mejor_equipo.sede}")
-    print(f"Equipo con menor rendimiento: {peor_equipo.deporte} Sede {peor_equipo.sede}")
+    # Ordenar todos los equipos por rendimiento promedio
+    heapsort(todos_los_equipos, key=lambda x: x.rendimiento_promedio(),consider_age=True)
 
+    # Equipo con mayor y menor rendimiento
+    equipo_mayor_rendimiento = todos_los_equipos[-1] if todos_los_equipos else None
+    equipo_menor_rendimiento = todos_los_equipos[0] if todos_los_equipos else None
 
+    # Obtener la sede de cada equipo
+    sede_equipo_mayor = "N/A" if not equipo_mayor_rendimiento else next((sede for sede, s in sedes.items() if equipo_mayor_rendimiento in s.equipos.to_list()), None)
+    sede_equipo_menor = "N/A" if not equipo_menor_rendimiento else next((sede for sede, s in sedes.items() if equipo_menor_rendimiento in s.equipos.to_list()), None)
+
+    print("Equipo con mayor rendimiento entre las sedes:", end=" ")
+    if equipo_mayor_rendimiento:
+        print(f"{equipo_mayor_rendimiento.deporte} en {sede_equipo_mayor}")
+    else:
+        print("N/A")
+
+    print("Equipo con menor rendimiento entre las sedes:", end=" ")
+    if equipo_menor_rendimiento:
+        print(f"{equipo_menor_rendimiento.deporte} en {sede_equipo_menor}")
+    else:
+        print("N/A")
 
 
 

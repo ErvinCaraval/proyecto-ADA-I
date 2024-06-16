@@ -64,5 +64,10 @@ mostrar_resultados_sedes(sedes)
 mostrar_ranking_jugadores(jugadores)
 mostrar_mejor_y_peor_jugador(jugadores)
 mostrar_equipo_mejor_y_peor_rendimiento(sedes)
+
 mostrar_jugador_mas_joven_y_veterano(jugadores)
 mostrar_promedio_edad_y_rendimiento(jugadores)
+
+
+
+
