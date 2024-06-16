@@ -1,3 +1,8 @@
+import time
+
+# Inicio del tiempo de ejecución
+inicio_ejecucion = time.time()
+
 jugadores = [
     Jugador(1, "Juan", 20, 94),
     Jugador(2, "Maria", 21, 94),
@@ -59,7 +64,14 @@ sedes = {
     "Sede Medellin": sede2,
 }
 
+# Fin del tiempo de ejecución para las entradas
+fin_entradas = time.time()
+tiempo_entradas = fin_entradas - inicio_ejecucion
+
 # Llama a las funciones con tus datos
+
+# Inicio del tiempo de ejecución para las salidas
+inicio_salidas = time.time()
 mostrar_resultados_sedes(sedes)
 mostrar_ranking_jugadores(jugadores)
 mostrar_mejor_y_peor_jugador(jugadores)
@@ -67,6 +79,14 @@ mostrar_equipo_mejor_y_peor_rendimiento(sedes)
 mostrar_jugador_mas_joven_y_veterano(jugadores)
 mostrar_promedio_edad_y_rendimiento(jugadores)
 
+fin_salidas = time.time()
+tiempo_salidas = fin_salidas - inicio_salidas
 
 
+# Tiempo total de ejecución
+tiempo_total = fin_salidas - inicio_ejecucion
+
+print("Tiempo de ejecución para las entradas:", tiempo_entradas)
+print("Tiempo de ejecución para las salidas:", tiempo_salidas)
+print("Tiempo total de ejecución:", tiempo_total)
 
