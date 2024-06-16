@@ -263,6 +263,18 @@ with open("inputs/input5a.txt", "r") as file:
 exec(codigo)
 
 
+input6 = "input 6"
+print("#" * 50)
+print("{:^50}".format("input 6"))
+print("#" * 50)
+print(input6)
+with open("inputs/input6a.txt", "r") as file:
+    codigo = file.read()
+
+
+exec(codigo)
+
+
 
 
 
