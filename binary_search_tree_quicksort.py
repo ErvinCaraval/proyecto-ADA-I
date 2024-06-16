@@ -188,8 +188,6 @@ def mostrar_equipo_mejor_y_peor_rendimiento(sedes):
         print("N/A")
 
 
-
-
 input1 = "input 1"
 print("#" * 50)
 print("{:^50}".format("input 1"))
@@ -245,6 +243,18 @@ print("#" * 50)
 print(input5)
 with open("inputs/input5b.txt", "r") as file:
     codigo = file.read()
+
+exec(codigo)
+
+
+input6 = "input 6"
+print("#" * 50)
+print("{:^50}".format("input 6"))
+print("#" * 50)
+print(input6)
+with open("inputs/input6b.txt", "r") as file:
+    codigo = file.read()
+
 
 exec(codigo)
 
