@@ -1,3 +1,56 @@
+# El problema de la asociacion de deportes
+
+### Análisis de Organización Deportiva
+
+La asociación de deportes realiza un análisis detallado de su organización deportiva para asignar recursos de manera efectiva y mejorar el rendimiento. Aquí hay una descripción:
+
+- La asociación cuenta con múltiples sedes en todo el país, cada una con equipos para diferentes deportes.
+- Cada sede tiene varios equipos, donde cada equipo tiene un deporte definido y un número específico de jugadores.
+- Los jugadores están caracterizados por un identificador único, nombre, edad y rendimiento (1-100).
+- Se busca ordenar internamente los equipos por rendimiento de los jugadores y edad en caso de empate.
+- A nivel de sede, se ordenan los equipos por su rendimiento promedio, priorizando mayor cantidad de jugadores en caso de empate.
+- Las sedes se ordenan por el promedio de rendimientos de sus equipos, priorizando más jugadores en caso de empate.
+- Se genera un ranking de todos los jugadores de todas las sedes ordenados por rendimiento para la toma de decisiones estratégicas.
+
+Este análisis permitirá identificar equipos y jugadores destacados, así como áreas de mejora en la organización deportiva.
+
+
+# Instrucciones de Ejecución
+
+Este repositorio contiene dos archivos de código Python para implementaciones de estructuras de datos y algoritmos de ordenamiento. A continuación, se detallan las instrucciones para ejecutar cada archivo:
+
+## Binary Search Tree con Quicksort
+
+El archivo `binary_search_tree_quicksort.py` contiene una implementación de un árbol de búsqueda binaria y el algoritmo de ordenamiento Quicksort.
+
+### Ejecución
+
+1. Asegúrate de tener Python instalado en tu sistema. Puedes descargarlo desde [python.org](https://www.python.org/) e instalarlo siguiendo las instrucciones adecuadas para tu sistema operativo.
+
+2. Abre una terminal o línea de comandos.
+
+3. Navega al directorio que contiene el archivo `binary_search_tree_quicksort.py`.
+
+4. Ejecuta el siguiente comando: python binary_search_tree_quicksort.py
+
+## Linked List con Heapsort
+
+El archivo `linkedlist_heapsort.py` contiene una implementación de una lista enlazada y el algoritmo de ordenamiento Heapsort.
+
+### Ejecución
+
+1. Asegúrate de tener Python instalado en tu sistema.
+
+2. Abre una terminal o línea de comandos.
+
+3. Navega al directorio que contiene el archivo `linkedlist_heapsort.py`.
+
+4. Ejecuta el siguiente comando: python linkedlist_heapsort.py
+
+## Requisitos
+
+- Python 3.x
+
 # Descripción de archivos y su implementación
 
 ## linkedlist_heapsort.py
